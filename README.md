@@ -1,35 +1,32 @@
 # Auf geht's nach Norden
 ## ~avatar avatar @unplugged
-gedulde dich noch ein wenig bis es soweit ist :-)
+In der nachricht vom Weihnachtsmann schribe er, dass er deine Hilfe am Nordpol brauch. Aber wie sollst du dort hin kommen?
+
+## ~ @unplugged 
+Du kannst den Calliope zu einem Kompas programmieren. Er wird dir helfen der Weg richtung Norden zu finden.
 
 
-> Diese Seite bei [https://r00b1nh00d.github.io/aufnachnorden/](https://r00b1nh00d.github.io/aufnachnorden/) öffnen
-
-## Als Erweiterung verwenden
-
-Dieses Repository kann als **Erweiterung** in MakeCode hinzugefügt werden.
-
-* öffne [https://makecode.calliope.cc/](https://makecode.calliope.cc/)
-* klicke auf **Neues Projekt**
-* klicke auf **Erweiterungen** unter dem Zahnrad-Menü
-* nach **https://github.com/r00b1nh00d/aufnachnorden** suchen und importieren
-
-## Dieses Projekt bearbeiten ![Build Status Abzeichen](https://github.com/r00b1nh00d/aufnachnorden/workflows/MakeCode/badge.svg)
-
-Um dieses Repository in MakeCode zu bearbeiten.
-
-* öffne [https://makecode.calliope.cc/](https://makecode.calliope.cc/)
-* klicke auf **Importieren** und dann auf **Importiere URL**
-* füge **https://github.com/r00b1nh00d/aufnachnorden** ein und klicke auf Importieren
-
-## Blockvorschau
-
-Dieses Bild zeigt den Blockcode vom letzten Commit im Master an.
-Die Aktualisierung dieses Bildes kann einige Minuten dauern.
-
-![Eine gerenderte Ansicht der Blöcke](https://github.com/r00b1nh00d/aufnachnorden/raw/master/.github/makecode/blocks.png)
-
-#### Metadaten (verwendet für Suche, Rendering)
-
-* for PXT/calliopemini
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
+## Schritt 1
+Erstelle eine Variable namens ``||variable:Richtung||``. In der ``||basic:dauerhaft||`` - Schleife soll die ``||inputs:Kompasausrichtung||`` zuerst auf die Variable ``||variable:Richtung||`` gespeichert werden. Anschließend soll in einer ``||logic: wenn - dann||`` -  Bedingung überrüft werden in welche Richtung der Calliope zeigt. <br>
+Bei einem Wert < 45 Soll N für Norden angezeigt werden. <br>
+Bei einem Wert < 135 Soll O für Osten angezeigt werden. <br>
+Bei einem Wert < 225 Soll S für Süden angezeigt werden. <br>
+Bei einem Wert < 315 Soll W für Westen angezeigt werden. <br>
+Ansonsten soll wieder Norden gezeigt werden.
+```blocks
+let Richtung = 0
+basic.forever(function () {
+    Richtung = input.compassHeading()
+    if (Richtung < 45) {
+        basic.showString("N")
+    } else if (Richtung < 135) {
+        basic.showString("O")
+    } else if (Richtung < 225) {
+        basic.showString("S")
+    } else if (Richtung < 315) {
+        basic.showString("W")
+    } else {
+        basic.showString("N")
+    }
+})
+```
