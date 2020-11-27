@@ -7,7 +7,7 @@ Du kannst den Calliope zu einem Kompas programmieren. Er wird dir helfen der Weg
 
 
 ## Schritt 1
-Erstelle eine Variable namens ``||variable:Richtung||``. In der ``||basic:dauerhaft||`` - Schleife soll die ``||inputs:Kompasausrichtung||`` zuerst auf die Variable ``||variable:Richtung||`` gespeichert werden. Anschließend soll in einer ``||logic: wenn - dann||`` -  Bedingung überrüft werden in welche Richtung der Calliope zeigt. <br>
+Erstelle eine Variable namens ``||variables:Richtung||``. In der ``||basic:dauerhaft||`` - Schleife soll die ``||input:Kompasausrichtung||`` zuerst auf die Variable ``||variables:Richtung||`` gespeichert werden. Anschließend soll in einer ``||logic: wenn - dann||`` -  Bedingung überrüft werden in welche Richtung der Calliope zeigt. <br>
 Bei einem Wert < 45 Soll N für Norden angezeigt werden. <br>
 Bei einem Wert < 135 Soll O für Osten angezeigt werden. <br>
 Bei einem Wert < 225 Soll S für Süden angezeigt werden. <br>
